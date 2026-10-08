@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>گوگل جمینای پرو ۱۸ ماهه | قیمت استثنایی و تعداد محدود</title>
-  <meta name="description" content="اشتراک ۱۸ ماهه گوگل جمینای پرو با قیمت استثنایی و ظرفیت محدود، همراه با ۵ ترابایت درایو و مدل‌های پیشرفته ساخت ویدیو.">
+  <title>گوگل جمینای پرو ۱۸ ماهه | فرصت استثنایی و محدود</title>
+  <meta name="description" content="اشتراک ۱۸ ماهه گوگل جمینای پرو با قیمت استثنایی و ظرفیت محدود، همراه با ۵ ترابایت گوگل درایو و مدل‌های پیشرفته ساخت ویدیو.">
   
   <!-- فونت وزیرمتن -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,16 +13,12 @@
 
   <style>
     :root {
-      --bg-dark: #090a0f;
+      --bg-dark: #07080c;
       --bg-card: rgba(255, 255, 255, 0.035);
       --bg-card-hover: rgba(255, 255, 255, 0.07);
       --border-color: rgba(255, 255, 255, 0.08);
       --border-hover: rgba(120, 119, 198, 0.35);
       --gemini-gradient: linear-gradient(135deg, #4285f4 0%, #9b72cf 50%, #d96570 100%);
-      --gold-gradient: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
-      --accent-blue: #4285f4;
-      --accent-purple: #9b72cf;
-      --accent-green: #10b981;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
     }
@@ -43,7 +39,7 @@
       min-height: 100vh;
     }
 
-    /* هاله‌های نوری شناور در پس‌زمینه */
+    /* هاله‌های نوری شناور */
     .glow-bg {
       position: fixed;
       width: 550px;
@@ -61,7 +57,7 @@
     .container {
       max-width: 960px;
       margin: 0 auto;
-      padding: 24px 20px 80px;
+      padding: 20px 20px 80px;
       position: relative;
       z-index: 1;
     }
@@ -71,7 +67,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 24px;
+      padding: 14px 22px;
       background: rgba(18, 20, 29, 0.65);
       backdrop-filter: blur(16px);
       border: 1px solid var(--border-color);
@@ -117,97 +113,142 @@
       animation: pulse 2s infinite;
     }
 
-    /* =========================================
-       بخش جدید: کادر بزرگ قیمت استثنایی و تعداد محدود
-       ========================================= */
-    .deal-hero-box {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(239, 68, 68, 0.12) 50%, rgba(147, 51, 234, 0.12) 100%);
-      border: 2px solid rgba(245, 158, 11, 0.45);
-      border-radius: 24px;
-      padding: 24px 20px;
-      margin-bottom: 30px;
+    /* ===================================================
+       بخش موشن‌گرافی متنی فوق‌العاده درشت (Motion Typography)
+       =================================================== */
+    .motion-stage {
+      background: radial-gradient(circle at center, rgba(30, 27, 75, 0.4) 0%, rgba(9, 10, 15, 0.8) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+      padding: 40px 20px;
+      margin-bottom: 35px;
       text-align: center;
       position: relative;
-      box-shadow: 0 12px 40px rgba(245, 158, 11, 0.15);
-      animation: borderGlow 4s infinite alternate;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     }
 
-    .deal-tags-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
+    .motion-stage::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 28px;
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(66, 133, 244, 0.4), rgba(239, 68, 68, 0.4), rgba(245, 158, 11, 0.4));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
     }
 
-    .deal-tag-pill {
-      font-size: 0.88rem;
-      font-weight: 800;
-      padding: 6px 16px;
-      border-radius: 50px;
-      letter-spacing: -0.2px;
-    }
-
-    .tag-fire {
-      background: linear-gradient(135deg, #ef4444, #f97316);
-      color: #ffffff;
-      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.35);
-    }
-
-    .tag-stock {
-      background: rgba(239, 68, 68, 0.18);
-      border: 1px solid rgba(239, 68, 68, 0.4);
-      color: #fca5a5;
+    .motion-indicator-tag {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 22px;
     }
 
-    .pulse-dot-red {
-      width: 9px;
-      height: 9px;
-      background: #ef4444;
+    .fire-dot {
+      width: 8px;
+      height: 8px;
+      background: #f59e0b;
       border-radius: 50%;
-      box-shadow: 0 0 10px #ef4444;
-      animation: pulse 1.4s infinite;
+      box-shadow: 0 0 10px #f59e0b;
+      animation: pulse 1.2s infinite;
     }
 
-    /* متن فوق‌العاده درشت */
-    .deal-main-title {
-      font-size: clamp(2rem, 5.5vw, 3.2rem);
-      font-weight: 900;
-      line-height: 1.25;
-      margin: 8px 0 12px;
-      letter-spacing: -0.5px;
+    /* محفظه متن موشن */
+    .motion-viewport {
+      height: 110px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
+      position: relative;
     }
 
-    .gold-shimmer {
-      background: var(--gold-gradient);
+    .motion-text {
+      position: absolute;
+      width: 100%;
+      font-size: clamp(2.3rem, 6.5vw, 4.2rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      opacity: 0;
+      transform: translateY(40px) scale(0.9);
+      filter: blur(8px);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* حالت فعال: ورود برق‌آسا */
+    .motion-text.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0px);
+      pointer-events: auto;
+    }
+
+    /* حالت خروج: پرتاب سریع به بالا */
+    .motion-text.exit {
+      opacity: 0;
+      transform: translateY(-45px) scale(1.08);
+      filter: blur(10px);
+    }
+
+    /* رنگ ۱: بنفش و فیروزه‌ای نئونی */
+    .color-1 {
+      background: linear-gradient(135deg, #38bdf8 0%, #a855f7 60%, #ec4899 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 2px 10px rgba(245, 158, 11, 0.3));
+      filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.45));
     }
 
-    .red-shimmer {
-      color: #ff5252;
-      text-shadow: 0 0 20px rgba(255, 82, 82, 0.45);
+    /* رنگ ۲: قرمز و نارنجی نئونی آتشین */
+    .color-2 {
+      background: linear-gradient(135deg, #ff4d4d 0%, #ff7b00 50%, #ffae00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 25px rgba(255, 77, 77, 0.5));
     }
 
-    .deal-divider {
-      color: #94a3b8;
-      font-size: 1.8rem;
+    /* رنگ ۳: طلایی درخشان متالیک */
+    .color-3 {
+      background: linear-gradient(135deg, #ffffff 0%, #fef08a 30%, #f59e0b 80%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.6));
     }
 
-    .deal-subtitle {
-      color: #e2e8f0;
-      font-size: 1.05rem;
-      font-weight: 500;
+    /* رنگ ۴: سبز سایبری و فسفری */
+    .color-4 {
+      background: linear-gradient(135deg, #a7f3d0 0%, #10b981 40%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 25px rgba(16, 185, 129, 0.55));
+    }
+
+    /* خط نشانگر پیشرفت موشن */
+    .motion-progress-bar {
+      width: 120px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 99px;
+      margin: 18px auto 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .motion-progress-fill {
+      width: 100%;
+      height: 100%;
+      background: var(--gemini-gradient);
+      animation: progressLoop 1.8s infinite linear;
     }
 
     /* Hero */
@@ -314,7 +355,7 @@
       color: #e2e8f0;
     }
 
-    /* عنوان بخش امکانات */
+    /* کارت‌های امکانات */
     .section-header {
       text-align: center;
       margin-bottom: 30px;
@@ -329,7 +370,6 @@
       font-size: 0.95rem;
     }
 
-    /* شبکه کارت‌های امکانات */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -399,7 +439,7 @@
       line-height: 1.6;
     }
 
-    /* بخش ثبت سفارش و CTA */
+    /* ثبت سفارش */
     .cta-card {
       background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -468,16 +508,17 @@
       100% { opacity: 0.6; transform: scale(0.92); }
     }
 
-    @keyframes borderGlow {
-      0% { border-color: rgba(245, 158, 11, 0.4); box-shadow: 0 8px 30px rgba(245, 158, 11, 0.12); }
-      100% { border-color: rgba(239, 68, 68, 0.6); box-shadow: 0 12px 45px rgba(239, 68, 68, 0.25); }
+    @keyframes progressLoop {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
 
     @media (max-width: 640px) {
       .container { padding: 16px 14px 60px; }
       header { padding: 12px 16px; margin-bottom: 18px; }
-      .deal-hero-box { padding: 20px 14px; }
-      .deal-main-title { font-size: 1.85rem; }
+      .motion-stage { padding: 30px 14px; }
+      .motion-viewport { height: 85px; }
+      .motion-text { font-size: 1.95rem; }
       .urgent-banner { padding: 16px; }
       .cta-card { padding: 30px 16px; }
       .btn-action { width: 100%; font-size: 1rem; }
@@ -505,25 +546,25 @@
       </div>
     </header>
 
-    <!-- کادر برجسته و درشت در همان ابتدا: قیمت استثنایی و تعداد محدود -->
-    <div class="deal-hero-box">
-      <div class="deal-tags-wrapper">
-        <span class="deal-tag-pill tag-fire">🔥 تخفیف ویژه و استثنایی</span>
-        <span class="deal-tag-pill tag-stock">
-          <span class="pulse-dot-red"></span>
-          ظرفیت فوق‌العاده محدود
-        </span>
+    <!-- ==============================================
+         موشن‌گرافی متنی فوق‌العاده درشت و پرسرعت در بالای صفحه
+         ============================================== -->
+    <div class="motion-stage">
+      <div class="motion-indicator-tag">
+        <span class="fire-dot"></span>
+        <span>اطلاعیه ویژه فعال‌سازی سهمیه‌ای</span>
       </div>
 
-      <div class="deal-main-title">
-        <span class="gold-shimmer">قیمت استثنایی</span>
-        <span class="deal-divider">✦</span>
-        <span class="red-shimmer">به تعداد کاملاً محدود</span>
+      <div class="motion-viewport">
+        <div class="motion-text color-1 active">این فرصت را از دست ندهید!</div>
+        <div class="motion-text color-2">یک آفر استثنایی و محدود!</div>
+        <div class="motion-text color-3">۱۸ ماه اشتراک کامل</div>
+        <div class="motion-text color-4">قیمت باورنکردنی!</div>
       </div>
 
-      <p class="deal-subtitle">
-        مهلت ثبت سفارش فقط تا پایان ظرفیت سهمیه فعال‌سازی ۱۸ ماهه
-      </p>
+      <div class="motion-progress-bar">
+        <div class="motion-progress-fill"></div>
+      </div>
     </div>
 
     <!-- بخش اصلی / Hero -->
@@ -656,7 +697,7 @@
 
     </div>
 
-    <!-- کارت ثبت سفارش و پشتیبانی -->
+    <!-- ثبت سفارش و پشتیبانی -->
     <section class="cta-card">
       <h3 class="cta-title">ثبت سفارش فوری با تخفیف ویژه</h3>
       <p class="cta-desc">جهت استعلام قیمت استثنایی و فعال‌سازی فوری قبل از اتمام موجودی، با پشتیبانی در ارتباط باشید.</p>
@@ -673,6 +714,29 @@
     </footer>
 
   </div>
+
+  <!-- اسکریپت کنترل چرخش متن‌های موشن‌گرافی -->
+  <script>
+    (function() {
+      const items = document.querySelectorAll('.motion-text');
+      let currentIndex = 0;
+      const speed = 1900; // سرعت چرخش هر عبارت (میلی‌ثانیه)
+
+      setInterval(() => {
+        const current = items[currentIndex];
+        current.classList.remove('active');
+        current.classList.add('exit');
+
+        setTimeout(() => {
+          current.classList.remove('exit');
+        }, 500);
+
+        currentIndex = (currentIndex + 1) % items.length;
+        const next = items[currentIndex];
+        next.classList.add('active');
+      }, speed);
+    })();
+  </script>
 
 </body>
 </html>
