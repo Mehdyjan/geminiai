@@ -114,7 +114,7 @@
     }
 
     /* ==========================================================
-       استیج موشن‌گرافی و کانت‌دان ۲۱ روزه شیشه‌ای
+       استیج موشن‌گرافی و کانت‌دان ۲۱ روزه
        ========================================================== */
     .motion-stage {
       background: radial-gradient(circle at center, rgba(30, 27, 75, 0.5) 0%, rgba(9, 10, 15, 0.88) 100%);
@@ -142,10 +142,12 @@
       margin-bottom: 24px;
     }
 
+    /* چینش چپ به راست برای نمایش استاندارد تایمر */
     .countdown-grid {
       display: flex;
       align-items: center;
       gap: 10px;
+      direction: ltr !important;
     }
 
     /* کارت‌های شیشه‌ای هر عدد */
@@ -248,7 +250,7 @@
       }
     }
 
-    /* گرادینت‌های رنگی متمایز ۴ عبارت */
+    /* گرادینت‌های رنگی ۴ عبارت */
     .color-1 {
       background: linear-gradient(135deg, #38bdf8 0%, #a855f7 60%, #ec4899 100%);
       -webkit-background-clip: text;
@@ -594,7 +596,7 @@
          ============================================== -->
     <div class="motion-stage">
       
-      <!-- کپسول شمارش معکوس ۲۱ روزه (بدون متن اضافه) -->
+      <!-- کپسول شمارش معکوس (چپ به راست: روز : ساعت : دقیقه : ثانیه) -->
       <div class="tehran-countdown-container">
         <div class="countdown-grid">
           <div class="time-box">
@@ -786,7 +788,6 @@
       const faDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
       const toFa = num => String(num).padStart(2, '0').replace(/\d/g, d => faDigits[d]);
 
-      // ثبت ۲۱ روز در حافظه محلی مرورگر جهت جلوگیری از ریست شدن با رفرش
       const STORAGE_KEY = 'gemini_deal_deadline_21d';
       let targetTime = localStorage.getItem(STORAGE_KEY);
       
