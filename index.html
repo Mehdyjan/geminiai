@@ -39,7 +39,7 @@
       min-height: 100vh;
     }
 
-    /* هاله‌های نوری شناور */
+    /* هاله‌های نوری شناور در بک‌گراند */
     .glow-bg {
       position: fixed;
       width: 550px;
@@ -113,14 +113,14 @@
       animation: pulse 2s infinite;
     }
 
-    /* ===================================================
-       بخش موشن‌گرافی متنی فوق‌العاده درشت (Motion Typography)
-       =================================================== */
+    /* ==========================================================
+       استیج موشن‌گرافی و کانت‌دان ۲۱ روزه شیشه‌ای
+       ========================================================== */
     .motion-stage {
-      background: radial-gradient(circle at center, rgba(30, 27, 75, 0.4) 0%, rgba(9, 10, 15, 0.8) 100%);
+      background: radial-gradient(circle at center, rgba(30, 27, 75, 0.5) 0%, rgba(9, 10, 15, 0.88) 100%);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 28px;
-      padding: 40px 20px;
+      padding: 30px 16px 36px;
       margin-bottom: 35px;
       text-align: center;
       position: relative;
@@ -128,81 +128,127 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     }
 
-    .motion-stage::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: 28px;
-      padding: 2px;
-      background: linear-gradient(135deg, rgba(66, 133, 244, 0.4), rgba(239, 68, 68, 0.4), rgba(245, 158, 11, 0.4));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    .motion-indicator-tag {
+    /* کپسول کانت‌دان */
+    .tehran-countdown-container {
       display: inline-flex;
+      justify-content: center;
       align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.035);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.12);
+      padding: 10px 22px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .countdown-grid {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* کارت‌های شیشه‌ای هر عدد */
+    .time-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 54px;
+      background: rgba(15, 23, 42, 0.7);
       border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.85rem;
+      border-radius: 12px;
+      padding: 6px 8px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .time-val {
+      font-size: 1.55rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ffffff 0%, #fef08a 40%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+
+    .time-lbl {
+      font-size: 0.68rem;
+      color: #94a3b8;
       font-weight: 700;
-      color: #cbd5e1;
-      margin-bottom: 22px;
+      margin-top: 2px;
     }
 
-    .fire-dot {
-      width: 8px;
-      height: 8px;
-      background: #f59e0b;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #f59e0b;
-      animation: pulse 1.2s infinite;
+    /* دو نقطه چشمک‌زن */
+    .time-colon {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #f59e0b;
+      animation: colonBlink 1s infinite;
+      user-select: none;
     }
 
-    /* محفظه متن موشن */
+    @keyframes colonBlink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.25; transform: scale(0.9); }
+    }
+
+    /* محفظه متن‌های موشن */
     .motion-viewport {
-      height: 110px;
+      height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+      overflow: hidden;
     }
 
+    /* موشن متنی ۱۰۰٪ CSS */
     .motion-text {
       position: absolute;
       width: 100%;
-      font-size: clamp(2.3rem, 6.5vw, 4.2rem);
+      font-size: clamp(1.85rem, 5.5vw, 3.6rem);
       font-weight: 900;
       letter-spacing: -1px;
       opacity: 0;
-      transform: translateY(40px) scale(0.9);
-      filter: blur(8px);
-      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       pointer-events: none;
       user-select: none;
+      will-change: transform, opacity, filter;
+      animation: kineticCycle 8s infinite ease-in-out;
     }
 
-    /* حالت فعال: ورود برق‌آسا */
-    .motion-text.active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0px);
-      pointer-events: auto;
+    .motion-text.phrase-1 { animation-delay: 0s; }
+    .motion-text.phrase-2 { animation-delay: 2s; }
+    .motion-text.phrase-3 { animation-delay: 4s; }
+    .motion-text.phrase-4 { animation-delay: 6s; }
+
+    @keyframes kineticCycle {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.92);
+        filter: blur(8px);
+      }
+      3% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0px);
+      }
+      22% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0px);
+      }
+      25% {
+        opacity: 0;
+        transform: translateY(-30px) scale(1.06);
+        filter: blur(8px);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.92);
+        filter: blur(8px);
+      }
     }
 
-    /* حالت خروج: پرتاب سریع به بالا */
-    .motion-text.exit {
-      opacity: 0;
-      transform: translateY(-45px) scale(1.08);
-      filter: blur(10px);
-    }
-
-    /* رنگ ۱: بنفش و فیروزه‌ای نئونی */
+    /* گرادینت‌های رنگی متمایز ۴ عبارت */
     .color-1 {
       background: linear-gradient(135deg, #38bdf8 0%, #a855f7 60%, #ec4899 100%);
       -webkit-background-clip: text;
@@ -210,7 +256,6 @@
       filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.45));
     }
 
-    /* رنگ ۲: قرمز و نارنجی نئونی آتشین */
     .color-2 {
       background: linear-gradient(135deg, #ff4d4d 0%, #ff7b00 50%, #ffae00 100%);
       -webkit-background-clip: text;
@@ -218,7 +263,6 @@
       filter: drop-shadow(0 0 25px rgba(255, 77, 77, 0.5));
     }
 
-    /* رنگ ۳: طلایی درخشان متالیک */
     .color-3 {
       background: linear-gradient(135deg, #ffffff 0%, #fef08a 30%, #f59e0b 80%, #d97706 100%);
       -webkit-background-clip: text;
@@ -226,7 +270,6 @@
       filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.6));
     }
 
-    /* رنگ ۴: سبز سایبری و فسفری */
     .color-4 {
       background: linear-gradient(135deg, #a7f3d0 0%, #10b981 40%, #06b6d4 100%);
       -webkit-background-clip: text;
@@ -234,7 +277,6 @@
       filter: drop-shadow(0 0 25px rgba(16, 185, 129, 0.55));
     }
 
-    /* خط نشانگر پیشرفت موشن */
     .motion-progress-bar {
       width: 120px;
       height: 3px;
@@ -242,13 +284,12 @@
       border-radius: 99px;
       margin: 18px auto 0;
       overflow: hidden;
-      position: relative;
     }
     .motion-progress-fill {
       width: 100%;
       height: 100%;
       background: var(--gemini-gradient);
-      animation: progressLoop 1.8s infinite linear;
+      animation: progressLoop 2s infinite linear;
     }
 
     /* Hero */
@@ -313,7 +354,7 @@
       font-weight: 500;
     }
 
-    /* چک‌لیست اطمینان و گارانتی */
+    /* ۳ مزیت کلیدی و تضمین‌ها */
     .trust-badges {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -516,9 +557,11 @@
     @media (max-width: 640px) {
       .container { padding: 16px 14px 60px; }
       header { padding: 12px 16px; margin-bottom: 18px; }
-      .motion-stage { padding: 30px 14px; }
+      .motion-stage { padding: 22px 10px; }
+      .tehran-countdown-container { padding: 8px 14px; }
+      .time-box { min-width: 46px; padding: 5px 6px; }
+      .time-val { font-size: 1.3rem; }
       .motion-viewport { height: 85px; }
-      .motion-text { font-size: 1.95rem; }
       .urgent-banner { padding: 16px; }
       .cta-card { padding: 30px 16px; }
       .btn-action { width: 100%; font-size: 1rem; }
@@ -547,19 +590,41 @@
     </header>
 
     <!-- ==============================================
-         موشن‌گرافی متنی فوق‌العاده درشت و پرسرعت در بالای صفحه
+         استیج موشن‌گرافی و شمارنده ۲۱ روزه
          ============================================== -->
     <div class="motion-stage">
-      <div class="motion-indicator-tag">
-        <span class="fire-dot"></span>
-        <span>اطلاعیه ویژه فعال‌سازی سهمیه‌ای</span>
+      
+      <!-- کپسول شمارش معکوس ۲۱ روزه (بدون متن اضافه) -->
+      <div class="tehran-countdown-container">
+        <div class="countdown-grid">
+          <div class="time-box">
+            <span class="time-val" id="cd-days">۲۱</span>
+            <span class="time-lbl">روز</span>
+          </div>
+          <span class="time-colon">:</span>
+          <div class="time-box">
+            <span class="time-val" id="cd-hours">۰۰</span>
+            <span class="time-lbl">ساعت</span>
+          </div>
+          <span class="time-colon">:</span>
+          <div class="time-box">
+            <span class="time-val" id="cd-mins">۰۰</span>
+            <span class="time-lbl">دقیقه</span>
+          </div>
+          <span class="time-colon">:</span>
+          <div class="time-box">
+            <span class="time-val" id="cd-secs">۰۰</span>
+            <span class="time-lbl">ثانیه</span>
+          </div>
+        </div>
       </div>
 
+      <!-- چرخش موشن ۴ عبارت -->
       <div class="motion-viewport">
-        <div class="motion-text color-1 active">این فرصت را از دست ندهید!</div>
-        <div class="motion-text color-2">یک آفر استثنایی و محدود!</div>
-        <div class="motion-text color-3">۱۸ ماه اشتراک کامل</div>
-        <div class="motion-text color-4">قیمت باورنکردنی!</div>
+        <div class="motion-text phrase-1 color-1">این فرصت را از دست ندهید!</div>
+        <div class="motion-text phrase-2 color-2">یک آفر استثنایی و محدود!</div>
+        <div class="motion-text phrase-3 color-3">۱۸ ماه اشتراک کامل</div>
+        <div class="motion-text phrase-4 color-4">قیمت باورنکردنی!</div>
       </div>
 
       <div class="motion-progress-bar">
@@ -715,26 +780,45 @@
 
   </div>
 
-  <!-- اسکریپت کنترل چرخش متن‌های موشن‌گرافی -->
+  <!-- اسکریپت شمارش معکوس زنده ۲۱ روزه با اعداد فارسی -->
   <script>
     (function() {
-      const items = document.querySelectorAll('.motion-text');
-      let currentIndex = 0;
-      const speed = 1900; // سرعت چرخش هر عبارت (میلی‌ثانیه)
+      const faDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+      const toFa = num => String(num).padStart(2, '0').replace(/\d/g, d => faDigits[d]);
 
-      setInterval(() => {
-        const current = items[currentIndex];
-        current.classList.remove('active');
-        current.classList.add('exit');
+      // ثبت ۲۱ روز در حافظه محلی مرورگر جهت جلوگیری از ریست شدن با رفرش
+      const STORAGE_KEY = 'gemini_deal_deadline_21d';
+      let targetTime = localStorage.getItem(STORAGE_KEY);
+      
+      if (!targetTime || isNaN(targetTime)) {
+        targetTime = Date.now() + (21 * 24 * 60 * 60 * 1000);
+        localStorage.setItem(STORAGE_KEY, targetTime);
+      } else {
+        targetTime = parseInt(targetTime, 10);
+      }
 
-        setTimeout(() => {
-          current.classList.remove('exit');
-        }, 500);
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minsEl = document.getElementById('cd-mins');
+      const secsEl = document.getElementById('cd-secs');
 
-        currentIndex = (currentIndex + 1) % items.length;
-        const next = items[currentIndex];
-        next.classList.add('active');
-      }, speed);
+      function updateCountdown() {
+        const now = Date.now();
+        const diff = Math.max(0, targetTime - now);
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diff / (1000 * 60)) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+
+        if (daysEl) daysEl.textContent = toFa(d);
+        if (hoursEl) hoursEl.textContent = toFa(h);
+        if (minsEl) minsEl.textContent = toFa(m);
+        if (secsEl) secsEl.textContent = toFa(s);
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
     })();
   </script>
 
